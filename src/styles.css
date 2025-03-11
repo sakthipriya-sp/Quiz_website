@@ -1,0 +1,21 @@
+/* Reset any unwanted padding and margin */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure no horizontal scrollbars appear */
+body, html {
+    overflow-x: hidden;  /* Prevent horizontal overflow */
+    height: 100%;  /* Full viewport height */
+}
+
+.container {
+    padding: 0;  /* Ensure no extra padding */
+}
+
+/* Optional: Prevent body scrollbars when unnecessary */
+body {
+    overflow: hidden;  
+}

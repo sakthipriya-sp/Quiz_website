@@ -1,0 +1,63 @@
+<body style="background-color: hotpink;width: 1000px; height: 1100px;">
+  
+  <!-- Rules Slide -->
+  <div *ngIf="!quizStarted && !quizCompleted" class="quiz-container" style="margin-left: 100px;margin-top: 75px;">
+    <div class="quiz-header">
+      <h2>Welcome to the General Knowledge Quiz!</h2>
+      <p class="intro-text">Test your knowledge and have fun!</p>
+    </div>
+
+    <div class="rules-section">
+      <h3>Quiz Rules:</h3>
+      <ul>
+        <li>Answer each question to the best of your ability.</li>
+        <li>There are 20 questions in total.</li>
+        <li>Once you reach the last question, click on "Complete the Quiz" to submit your answers.</li>
+        <li>You can go back and change your answers until you complete the quiz.</li>
+        <li>Your score and a motivational message will appear after the quiz ends.</li>
+      </ul>
+    </div>
+
+    <div class="start-btn-container">
+      <button (click)="startQuiz()" class="start-btn">Start Quiz</button>
+    </div>
+  </div>
+
+  <!-- Quiz Questions Slide -->
+  <div *ngIf="quizStarted && !quizCompleted" class="quiz-container" style="height: 500px;margin-top: 40px;">
+    <div class="quiz-header">
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+    </div>
+
+    <div class="options-container">
+      <div *ngFor="let option of questions[currentQuestionIndex].options; let i = index" class="option">
+        <label>
+          <input type="radio" name="answer" [value]="option" (change)="selectAnswer(currentQuestionIndex, option)">
+          {{ option }}
+        </label>
+      </div>
+    </div>
+
+    <div class="navigation-buttons">
+      <button (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0" class="prev-btn">Previous</button>
+      <!-- Last question, change 'Next' to 'Complete Quiz' -->
+      <button *ngIf="isLastQuestion()" (click)="submitQuiz()" class="complete-btn">Complete the Quiz</button>
+      <button *ngIf="!isLastQuestion()" (click)="nextQuestion()" [disabled]="isNextButtonDisabled()" class="next-btn">Next</button>
+    </div>
+  </div>
+
+  <!-- Score Page -->
+  <div *ngIf="quizCompleted" class="score-container" style="width: 80%; max-width: 700px; margin: 0 auto; text-align: center; padding: 20px;margin-top: 60px;background-color: aliceblue;">
+    <h2>Your Final Score: {{ score !== null ? score : 'Not available' }} / {{ questions.length }}</h2>
+    
+    <!-- Display Motivational Message -->
+    <p class="motivational-message" style="color: black;">{{ motivationalMessage }}</p>
+
+    <!-- GIF below the motivational message -->
+    <img src="https://i.pinimg.com/originals/b6/c4/96/b6c496c171b5a0842d180dff4e1269d2.gif" alt="Motivational GIF" style="width: 80%; max-width: 400px; margin-top: 10px; border-radius: 8px;">
+    
+    <!-- Retest Button -->
+    <button (click)="startQuiz()" class="retake-btn">Take a Retest</button>
+  </div>
+
+</body>

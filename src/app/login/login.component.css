@@ -1,0 +1,91 @@
+/* Form container styling */
+.styled-form {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    margin-right: 150px;
+  }
+  
+  /* Label styling */
+  .styled-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Input field styling */
+  .styled-form .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  /* Input focus styling */
+  .styled-form .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Button styling */
+  .styled-form .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .styled-form .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Disabled button styling */
+  .styled-form .btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Error text styling */
+  .error-text {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Prevent any overflow */
+}
+.about-video {
+    flex: 1; /* Take 50% of the space */
+    display: flex;
+    justify-content: center; /* Center video horizontally */
+    align-items: center; /* Center video vertically */
+  }
+  .quiz {
+    height: 300px; /* Adjust as needed */
+    width: 300px; /* Adjust as needed */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensure the GIF fits well in the circular frame */
+  }
+  

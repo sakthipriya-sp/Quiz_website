@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <nav class="vertical-navbar" [ngClass]="selectedTheme">
+                <a routerLink="" routerLinkActive="active">HOME</a>
+                <a routerLink="about" routerLinkActive="active">ABOUT QUIZTOPIA</a>
+                <a routerLink="login" routerLinkActive="active">LOGIN</a>
+                <a routerLink="topic" routerLinkActive="active">QUIZ TOPICS</a>
+                <a routerLink="feedback" routerLinkActive="active">FEEDBACK</a>
+                <a routerLink="reviews" routerLinkActive="active">REVIEWS</a>
+  
+                <div class="theme-switcher">
+                    <label for="themeSelect" style="color: white;">CHOOSE THEME:</label>
+                    <select id="themeSelect" [(ngModel)]="selectedTheme">
+                        <option value="default">Default</option>
+                        <option value="pink">Pink</option>
+                        <option value="orange">Blue</option>
+                        <option value="yellow">Dark</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+  
+        <div class="col-sm-10 content">
+            <router-outlet></router-outlet> <!-- Routed content loads here -->
+        </div>
+    </div>
+  </div>
+  
